@@ -13,3 +13,5 @@ class Room {
     this.history = [];
   }
 }
+
+module.exports = Room;
