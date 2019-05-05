@@ -14,13 +14,10 @@ socket.on('nsList', nsData => {
   // add clickListner to each NS
   Array.from(document.getElementsByClassName('namespace')).forEach(elem => {
     elem.addEventListener('click', e => {
+      // Add listener for when user clicks on a namespace and join the namespace
       const nsEndpoint = elem.getAttribute('ns');
+      joinNs(nsEndpoint);
     });
   });
   joinNs('/wiki');
 });
-
-// socket.on('messageFromServer', dataFromServer => {
-//   console.log(dataFromServer);
-//   socket.emit('dataToServer', { data: 'Data from the Client!' });
-// });
